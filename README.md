@@ -9,6 +9,13 @@ Storage for stand-alone Windows Rubies and gems built for use in SketchUp.
 | ruby27-x64ms.zip  | 2.7.6p219  | x64-mswin64_140 | VS 2019                 | 2021, 2022 |
 | ruby27-x64u.zip   | 2.7.6p219  | x64-mingw-ucrt  | MSYS2 UCRT64 gcc 12.1.0 | 2021, 2022 |
 
+## SketchUp Specific Gems
+
+| File                    | SketchUp    |
+|-------------------------|-------------|
+| nokogiri-1.13.8-su.gem  | 2021, 2022  |
+
+
 
 ## SketchUp Embedded Ruby Info
 
@@ -77,7 +84,10 @@ SketchUp.  Another way to check them is to try to load them with `ruby27-x64ms`.
 * MSYS2 Installer - https://github.com/msys2/msys2-installer
 * Microsoft/vcpkg - https://github.com/Microsoft/vcpkg
 
-### Misc
+### Misc Notes
+
+Uncompiled extension gems may fail if installed to a path with spaces.  The default
+gem path that SketchUp uses has spaces.  So...
 
 This repo contains a file `ruby_info.rb`, which outputs info about Ruby builds.  Haven't
 tried it with Ruby builds previous to 2.2.  Works with both stand-alone and loaded in
