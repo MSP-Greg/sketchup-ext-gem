@@ -1,0 +1,31 @@
+Demo of communicating with a stand-alone Ruby from SketchUp
+
+Starts a TCPServer in the stand-alone Ruby, and opens a connection in
+SketchUp's embedded Ruby.
+
+To start in SketchUp's Ruby console:
+load '<path to file>/sub_start.rb'
+
+After it's loaded, in SketchUp's Ruby console type:
+
+SPR.send 'any text'
+
+The text should be echoed.
+
+To close the stand-alone Ruby:
+SPR.close
+
+Two environment setting are available.
+
+ENV['SUB_PROCESS_RUBY']
+
+Setting this to a valid ruby path will use it for the sub process Ruby.
+
+ENV['SUB_PROCESS_DEBUG'] = 'true'
+
+Setting this will enable debugging and also add the following methods:
+
+SPR.env  - shows sub process ENV
+SPR.gems - shows sub process gem info
+SPR.lf   - shows sub process $LOADED_FEATURES
+SPR.lp   - shows sub process $LOAD_PATH
